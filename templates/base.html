@@ -1,10 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>HomePage Top Template thing</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Dong</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/2b2dcc1780.css">
+    <link rel="stylesheet" href="style.css">  
 </head>
 <body>
-{% block body_block %}
-{% endblock %}
-</body>
+    <svg id="fader" class="fade-out">
+    </svg>
+    <script>
+        fadeInPage();
+    </script>
+    <div class="page-container">
+        <div id="slideout-menu">
+            <ul>
+                <li>
+                    <a href="shorts.html">Short Fiction</a>
+                </li>
+                <li>
+                    <a href="editorial.html">Editorial</a>
+                </li>
+                <li>
+                    <a href="about.html">About / Contact</a>
+                </li>
+                <li>
+                    <a href="coming-soon.html">Blog</a>
+                </li>
+                <li>
+                    <a href="ubw.html">Uplifting Black Writers</a>
+                </li>
+            </ul>
+        </div>  
+        <div class="header-box floating">
+            <div id="menu-icon" class="header-font floating">
+                <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+            </div>
+            <div class="header-font floating">
+                <a href="index.html">MARIA DONG</a>
+            </div>
+            <div class="sub-header">
+                <a href="shorts.html">Sci-Fi & Fantasy</a>
+            </div>
+            <div class="spacer"></div>
+        </div>
+        <nav class="menu-bar">
+            <ul>
+                <li>
+                    <a href="shorts.html">Fiction</a>
+                </li>
+                <li>
+                    <a href="editorial.html">Editorial</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="coming-soon.html">Blog</a>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <div class="central-column floating">
+                {% block body_block %}
+                {% endblock %}
+                </div>
+            </div>
+        </main>
+        <footer>
+            <ul id="footer-list"><li><a href="https://twitter.com/mariadongwrites" target="_blank"><i class="fa fa-twitter" aria-hidden="true" id="twitter-icon"></i></a></li>
+                <li><a href="about.html"><i class="fa fa-envelope" aria-hidden="true" id="email-icon"></i></a></li>
+            </ul>
+        </footer>
+    </div>
+    <script src="main.js"></script>
+  </body>
 </html>
