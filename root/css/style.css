@@ -7,7 +7,7 @@ body {
     font-size: 20px;
     margin: 0 0 0 0;
     font-family: 'Roboto', sans-serif;
-    background-image: url('{% static 'images/dongbg.png' %}');
+    background-image: url('/static/images/dongbg.png');
     background-attachment: fixed;
     background-position: top;
     background-size: cover;

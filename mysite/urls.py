@@ -21,6 +21,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', landing, name = 'landing'),
     path('about/', about, name = 'about'),
-    # path('other/', other, name = 'otherpage'),
+    path('fiction/', fiction, name = 'fiction'),
+    path('editorial/', editorial, name = 'editorial'),
+    path('ubw/', ubw, name ='ubw'),
+    path('testimonial/', testimonial, name='testimonial'),
     path('blog/', include('blog.urls')),
 ]

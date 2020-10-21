@@ -1,4 +1,18 @@
 {% extends "base.html" %}
 {% block body_block %}
-    You are at the landing page.
+{% load static %}
+<div class="spacer">
+</div>
+<div class="cover-box">
+    <img src="{% static 'images/FF2-Cover.jpg' %}" class="cover-image floating drop-shadow">
+</div>
+<div class="spacer desktop-only">
+</div>
+<div class="spacer desktop-only">
+</div>
+<div class="writers-link yellow-link desktop-only">
+    <a href="{% url 'ubw' %}">Uplifting Black Writers</a>
+</div>
+<div class="spacer desktop-only">
+</div>
 {% endblock %}

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maria Dong</title>
+    <title>Maria Dong, Author of Science Fiction and Fantasy</title>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/2b2dcc1780.css">
@@ -20,19 +20,19 @@
         <div id="slideout-menu">
             <ul>
                 <li>
-                    <a href="shorts.html">Short Fiction</a>
+                    <a href="{% url 'fiction' %}">Short Fiction</a>
                 </li>
                 <li>
-                    <a href="editorial.html">Editorial</a>
+                    <a href="{% url 'editorial' %}">Editorial</a>
                 </li>
                 <li>
-                    <a href="about.html">About / Contact</a>
+                    <a href="{% url 'about' %}">About / Contact</a>
                 </li>
                 <li>
-                    <a href="coming-soon.html">Blog</a>
+                    <a href="{% url 'post_list' %}">Blog</a>
                 </li>
                 <li>
-                    <a href="ubw.html">Uplifting Black Writers</a>
+                    <a href="{% url 'ubw' %}">Uplifting Black Writers</a>
                 </li>
             </ul>
         </div>  
@@ -41,26 +41,26 @@
                 <i class="fa fa-angle-double-down" aria-hidden="true"></i>
             </div>
             <div class="header-font floating">
-                <a href="index.html">MARIA DONG</a>
+                <a href="{% url 'landing' %}">MARIA DONG</a>
             </div>
             <div class="sub-header">
-                <a href="shorts.html">Sci-Fi & Fantasy</a>
+                <a href="{% url 'fiction' %}">Sci-Fi & Fantasy</a>
             </div>
             <div class="spacer"></div>
         </div>
         <nav class="menu-bar">
             <ul>
                 <li>
-                    <a href="shorts.html">Fiction</a>
+                    <a href="{% url 'fiction' %}">Fiction</a>
                 </li>
                 <li>
-                    <a href="editorial.html">Editorial</a>
+                    <a href="{% url 'editorial' %}">Editorial</a>
                 </li>
                 <li>
-                    <a href="about.html">About</a>
+                    <a href="{% url 'about' %}">About</a>
                 </li>
                 <li>
-                    <a href="coming-soon.html">Blog</a>
+                    <a href="{% url 'post_list' %}">Blog</a>
                 </li>
             </ul>
         </nav>
@@ -73,7 +73,7 @@
         </main>
         <footer>
             <ul id="footer-list"><li><a href="https://twitter.com/mariadongwrites" target="_blank"><i class="fa fa-twitter" aria-hidden="true" id="twitter-icon"></i></a></li>
-                <li><a href="about.html"><i class="fa fa-envelope" aria-hidden="true" id="email-icon"></i></a></li>
+                <li><a href="{% url 'about' %}"><i class="fa fa-envelope" aria-hidden="true" id="email-icon"></i></a></li>
             </ul>
         </footer>
     </div>
