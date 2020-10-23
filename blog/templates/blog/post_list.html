@@ -6,7 +6,7 @@
         <div class="card card-dark">
             <h3><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h3>
             <p>published: {{post.published_date}}</p>
-            <p>{{post.text|linebreaksbr }}</p>
+            <p>{{post.text|truncatewords:30|linebreaksbr }}</p>
         </div>
         {% endfor %}
     </div>     
