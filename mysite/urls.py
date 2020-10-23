@@ -25,5 +25,5 @@ urlpatterns = [
     path('editorial/', editorial, name = 'editorial'),
     path('ubw/', ubw, name ='ubw'),
     path('blog/', include('blog.urls')),
-    # path('testimonials/', include('testimonals.urls')),
+    path('testimonials/', include('testimonials.urls')),
 ]
