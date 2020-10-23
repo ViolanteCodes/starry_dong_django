@@ -11,5 +11,3 @@ def fiction(request):
     return render(request, 'fiction.html')
 def ubw(request):
     return render(request, 'ubw.html')
-def testimonial(request):
-    return render(request, 'testimonial.html')
