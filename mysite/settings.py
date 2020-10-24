@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'blog.apps.BlogConfig',
     'testimonials.apps.TestimonialsConfig',
+    'shorts.apps.ShortsConfig',
 ]
 
 MIDDLEWARE = [
@@ -132,6 +133,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'root')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = 'http://127.0.0.1:8000/media/'
 STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static'),
 ]
