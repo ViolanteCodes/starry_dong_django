@@ -1,18 +1,25 @@
 {% extends "base.html" %}
 {% block body_block %}
-<div>
-    <h1><a href="/">Django Girls Blog</a></h1>
-</div>
-
-<div>
-    <p>published: 14.06.2014, 12:14</p>
-    <h2><a href="">My first post</a></h2>
-    <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-</div>
-
-<div>
-    <p>published: 14.06.2014, 12:14</p>
-    <h2><a href="">My second post</a></h2>
-    <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-</div>
+    <h1 id="#top">Testimonials</h1>
+    <div class="card card-dark">
+        <p>Note: Click on any of the authors below to jump to their full testimonial.</p>
+        <ul>{% for testimonial in testimonials %}
+        <li>"{{ testimonial.pull_quote|lower|capfirst }}." <a href="#{{testimonial.pk}}">{{testimonial.author}}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% for testimonial in testimonials %}
+    <div class="card card-dark">    
+    <h3 class="testimonial" id="{{testimonial.pk}}">"{{testimonial.pull_quote}}"</h3>
+    <p class="testimonial">{{testimonial.text|linebreaks}}</p>
+    <a href="{{testimonial.author_url}}" target="__blank">{{testimonial.author}}</a>
+        {% if testimonial.book_title %}
+            <p class="no-margin">Author of <span class="attribution-top highlighter">{{testimonial.book_title|upper}}</span></p>
+        {% endif %}
+        {% if testimonial.publisher %}
+            <p class="attribution-bottom no-margin">{{ testimonial.publisher }}</p>
+        {% endif %}
+            <p class="no-margin"><a href="#top">Back to Top.</a></p>
+    </div>
+    {% endfor %}
 {% endblock %}

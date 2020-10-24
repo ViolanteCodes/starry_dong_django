@@ -5,4 +5,5 @@ from .models import Testimonial
 # Create your views here.
 
 def testimonial_list(request):
-    return render(request, 'testimonials/testimonial_list.html', {})
+    testimonials = Testimonial.objects.order_by('-published_date')
+    return render(request, 'testimonials/testimonial_list.html', {'testimonials':testimonials})
