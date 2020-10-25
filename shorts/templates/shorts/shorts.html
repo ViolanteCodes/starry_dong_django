@@ -5,19 +5,20 @@
     <div class="card card-dark annotation">
         View a condensed list.
     </div>
-    <h2>Pending Publication</h2>
+    <h2 class="header-card-dark">Pending Publication</h2>
         {% for story in unpubbed %}
             <div class="card card-dark pieces-row">
-                <div>
             {% if story.cover %}
+                <div class='piece-cover-box'>
                     <a target="__blank" href="{{story.piece_url}}">
                     <img src="{{story.cover.url}}" alt="Cover of {{story.publisher}}, {{story.issue}" class="piece-cover">
                     </a>
+                </div>
             {% endif %}
                 <div class='pieces-list'>
                 <p class="pieces-p">
                     <span class="piece-title">{{story.title}}. </span>
-                    <a href="{{story.piece_url}}" target="_blank">{{story.title}}, {{story.issue}}</a>. Date Pending. ({{story.word_count}} words.)
+                    <a href="{{story.piece_url}}" target="_blank">{{story.title}}, #{{story.issue}}</a>. Date Pending. ({{story.word_count}} words.)
                 </p>
                     <div class="piece-quote">
                         {{story.pull_quote}}
@@ -28,4 +29,28 @@
                 </div>
             </div>
         {% endfor %}
+    <h2 class="header-card-dark">Published Pieces</h2>
+        {% for story in pubbed %}
+        <div class="card card-dark pieces-row">
+            {% if story.cover %}
+                <div class='piece-cover-box'>
+                    <a target="__blank" href="{{story.piece_url}}">
+                        <img src="{{story.cover.url}}" alt="Cover of {{story.publisher}}, {{story.issue}" class="piece-cover">
+                    </a>
+                </div>
+            {% endif %}
+                <div class='pieces-list'>
+                <p class="pieces-p">
+                    <span class="piece-title">{{story.title}}. </span>
+                    <a href="{{story.piece_url}}" target="_blank">{{story.title}}, #{{story.issue}}</a>. Date Pending. ({{story.word_count}} words.)
+                </p>
+                    <div class="piece-quote">
+                        {{story.pull_quote}}
+                    </div>
+                    <div class="piece-tags">
+                        {{story.tags}}
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
 {% endblock %}
