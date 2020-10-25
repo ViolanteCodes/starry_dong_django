@@ -16,5 +16,6 @@ def condensed(request):
 
 def by_genre(request, genre):
     genre = get_object_or_404(Genre, name=genre)
-    stories = genre.objects.all()
-    return render(request, 'shorts/genre_detail.html', {'stories': stories})
+    unpubbed = Piece.objects.filter(genre=genre, published_date__isnull=True).order_by('-created_date')
+    pubbed = Piece.objects.filter(genre=genre, published_date__isnull=False).order_by('-published_date')
+    return render(request, 'shorts/genre_detail.html', {'unpubbed': unpubbed, 'pubbed':pubbed, 'genre':genre})

@@ -1,8 +1,77 @@
 {% extends "base.html" %}
 {% load static %}
 {% block body_block %}
-    {% for story in stories}
-        {{story.title}}
-        </a>
+    <h1>Short Fiction By Genre</h1>
+    <div class="card card-dark annotation">
+        <p class="pieces">You are currently viewing all pieces in genre: {{genre.name|upper}}.</p>
+        <p>Click to go back to
+            <a href="{% url 'shorts' %}">all pieces</a>.
+        </p>
+    </div>
+    {% if unpubbed %}
+    <h2 class="header-card-dark">Pending Publication</h2>
+    {% for story in unpubbed %}
+    <div class="card card-dark pieces-row">
+        {% if story.cover %}
+            <div>
+                <a target="__blank" href="{{story.piece_url}}">
+                    <img src="{{story.cover.url}}" alt="Cover of {{story.publisher}}, {{story.issue}" class="piece-cover">
+                </a>
+            </div>
+        {% endif %}
+            <div class="pieces-list">
+            <p class="pieces-p">
+                <span class="piece-title">{{story.title}}. </span>
+                <a href="{{story.piece_url}}" target="_blank">{{story.title}}, #{{story.issue}}</a>. Date pending. ({{story.word_count}} words.)
+            </p>
+            {% if story.cover %}
+            <div class="mobile-cover">
+                <a target="__blank" href="{{story.piece_url}}">
+                    <img src="{{story.cover.url}}" alt="Cover of {{story.publisher}}, {{story.issue}" class="mobile-cover">
+                </a>
+            </div>
+            {% endif %}
+                <div class="piece-quote">
+                    {{story.pull_quote}}
+                </div>
+                <div class="piece-tags">
+                    {{story.tags}}
+                </div>
+            </div>
+    </div>
     {% endfor %}
+{% endif %}
+{% if pubbed %}
+    <h2 class="header-card-dark">Published Pieces</h2>
+        {% for story in pubbed %}
+            <div class="card card-dark pieces-row">
+                {% if story.cover %}
+                    <div>
+                        <a target="__blank" href="{{story.piece_url}}">
+                            <img src="{{story.cover.url}}" alt="Cover of {{story.publisher}}, {{story.issue}" class="piece-cover">
+                        </a>
+                    </div>
+                {% endif %}
+                    <div class="pieces-list">
+                    <p class="pieces-p">
+                        <span class="piece-title">{{story.title}}. </span>
+                        <a href="{{story.piece_url}}" target="_blank">{{story.title}}, #{{story.issue}}</a>. {{story.published_date}}. ({{story.word_count}} words.)
+                    </p>
+                    {% if story.cover %}
+                    <div class="mobile-cover">
+                        <a target="__blank" href="{{story.piece_url}}">
+                            <img src="{{story.cover.url}}" alt="Cover of {{story.publisher}}, {{story.issue}" class="mobile-cover">
+                        </a>
+                    </div>
+                    {% endif %}
+                        <div class="piece-quote">
+                            {{story.pull_quote}}
+                        </div>
+                        <div class="piece-tags">
+                            {{story.tags}}
+                        </div>
+                    </div>
+            </div>
+        {% endfor %}
+    {% endif %}
 {% endblock %}
