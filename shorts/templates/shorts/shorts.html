@@ -3,7 +3,11 @@
 {% block body_block %}
     <h1>Short Fiction</h1>
     <div class="card card-dark annotation">
-        View a condensed list.
+        <p>Click to view a <a href="{% url 'condensed' %}">condensed list</a>. You can also sort pieces by genre:
+        {% for genre in genres %}
+            <a href="{% url 'genre' genre=genre %}">{{genre.name}}</a>
+        {% endfor %}
+        </p>
     </div>
     <h2 class="header-card-dark">Pending Publication</h2>
         {% for story in unpubbed %}

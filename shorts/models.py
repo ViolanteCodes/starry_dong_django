@@ -5,13 +5,13 @@ from django.utils import timezone
 # Create your models here.
 
 class Genre(models.Model):
-    genre = models.CharField(max_length=200)
+    name = models.CharField(max_length=200)
 
     def publish(self):
         self.save()
 
     def __str__(self):
-        return self.genre
+        return self.name
 
 class Publisher(models.Model):
     publisher_name = models.CharField(max_length=200)
