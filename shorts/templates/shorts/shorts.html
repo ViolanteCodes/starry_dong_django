@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body_block %}
+    <h1>Short Fiction</h1>
+    <div class="card card-dark annotation">
+        View a condensed list.
+    </div>
+    <h2>Pending Publication</h2>
+    <div class="card card-dark annotation">
+        {% for story in unpubbed %}
+            <div class="card pieces-row">
+                {% if story.cover %}
+                    <div>
+                        <a target="__blank" href="{{story.piece_url}}">
+                        <img src="{{story.cover.url}}" alt="Cover of {{story.publisher}}, {{story.issue}" class="piece-cover">
+                        </a>
+                    </div>
+                {% endif %}
+                    <div class='pieces-list'>
+                    <p>
+                        <span class="piece-title">
+                            {{story.title}}.   
+                        </span>
+                        <a href="{}" target="_blank">
+                            {{story.title|title}}, {{story.issue}}
+                        </a>. Date Pending. ({{story.word_count}})
+                    </p>
+                    </div>
+                    <div class="piece-quote">
+                        {{story.pull_quote}}
+                    </div>
+                    <div class="piece-tags">
+                        {{story.tags}}
+                    </div>
+            </div>
+        {% endfor %}
+{% endblock %}
