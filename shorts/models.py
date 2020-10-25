@@ -57,6 +57,7 @@ class Review(models.Model):
     review_venue = models.CharField(max_length=200)
     review_date = models.DateField(blank=True, null=True)
     review_pull_quote = models.CharField(max_length=200, blank=True)
+    text_for_archive = models.TextField(null=True, blank=True)
 
     def publish(self):
         self.save()

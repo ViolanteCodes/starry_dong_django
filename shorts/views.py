@@ -7,7 +7,8 @@ def shorts(request):
     unpubbed = Piece.objects.filter(published_date__isnull=True).order_by('-created_date')
     pubbed = Piece.objects.filter(published_date__isnull=False).order_by('-published_date')
     genres = Genre.objects.all()
-    return render(request, 'shorts/shorts.html', {'unpubbed': unpubbed, 'pubbed':pubbed, 'genres':genres})
+    reviews = Review.objects.all()
+    return render(request, 'shorts/shorts.html', {'unpubbed': unpubbed, 'pubbed':pubbed, 'genres':genres, 'reviews':reviews})
 
 def condensed(request):
     unpubbed = Piece.objects.filter(published_date__isnull=True).order_by('-created_date')
@@ -16,6 +17,7 @@ def condensed(request):
 
 def by_genre(request, genre):
     genre = get_object_or_404(Genre, name=genre)
+    reviews = Review.objects.all()
     unpubbed = Piece.objects.filter(genre=genre, published_date__isnull=True).order_by('-created_date')
     pubbed = Piece.objects.filter(genre=genre, published_date__isnull=False).order_by('-published_date')
-    return render(request, 'shorts/genre_detail.html', {'unpubbed': unpubbed, 'pubbed':pubbed, 'genre':genre})
+    return render(request, 'shorts/genre_detail.html', {'unpubbed': unpubbed, 'pubbed':pubbed, 'genre':genre, 'reviews':reviews})

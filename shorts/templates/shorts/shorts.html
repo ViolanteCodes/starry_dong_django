@@ -3,7 +3,7 @@
 {% block body_block %}
     <h1>Short Fiction</h1>
     <div class="card card-dark annotation">
-        <p>Click to view a <a href="{% url 'condensed' %}">condensed list</a> in bibliography f. You can also sort pieces by genre:
+        <p>Click to view a <a href="{% url 'condensed' %}">condensed list</a> in bibliography form. You can also sort pieces by genre:
         {% for genre in genres %}
             <a href="{% url 'genre' genre=genre %}">{{genre.name}}</a>
         {% endfor %}
@@ -16,19 +16,19 @@
             {% if story.cover %}
                 <div>
                     <a target="__blank" href="{{story.piece_url}}">
-                        <img src="{{story.cover.url}}" alt="Cover of {{story.publisher}}, {{story.issue}" class="piece-cover">
+                        <img src="{{story.cover.url}}" alt="Cover of {{story.published_in}}, {{story.issue}" class="piece-cover">
                     </a>
                 </div>
             {% endif %}
                 <div class="pieces-list">
                 <p class="pieces-p">
                     <span class="piece-title">{{story.title}}. </span>
-                    <a href="{{story.piece_url}}" target="_blank">{{story.title}}, #{{story.issue}}</a>. Date pending. ({{story.word_count}} words.)
+                    <a href="{{story.piece_url}}" target="_blank">{{story.published_in}}, #{{story.issue}}</a>. Date pending. ({{story.word_count}} words.)
                 </p>
                 {% if story.cover %}
                 <div class="mobile-cover">
                     <a target="__blank" href="{{story.piece_url}}">
-                        <img src="{{story.cover.url}}" alt="Cover of {{story.publisher}}, {{story.issue}" class="mobile-cover">
+                        <img src="{{story.cover.url}}" alt="Cover of {{story.published_in}}, {{story.issue}" class="mobile-cover">
                     </a>
                 </div>
                 {% endif %}
@@ -38,6 +38,11 @@
                     <div class="piece-tags">
                         {{story.tags}}
                     </div>
+                    {% for review in reviews %}
+                        {% if review.piece == story %}
+                            <div>Reviews for this piece: {{review.pull_quote}}</div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
         </div>
         {% endfor %}
@@ -49,19 +54,19 @@
                     {% if story.cover %}
                         <div>
                             <a target="__blank" href="{{story.piece_url}}">
-                                <img src="{{story.cover.url}}" alt="Cover of {{story.publisher}}, {{story.issue}" class="piece-cover">
+                                <img src="{{story.cover.url}}" alt="Cover of {{story.published_in}}, {{story.issue}" class="piece-cover">
                             </a>
                         </div>
                     {% endif %}
                         <div class="pieces-list">
                         <p class="pieces-p">
                             <span class="piece-title">{{story.title}}. </span>
-                            <a href="{{story.piece_url}}" target="_blank">{{story.title}}, #{{story.issue}}</a>. {{story.published_date}}. ({{story.word_count}} words.)
+                            <a href="{{story.piece_url}}" target="_blank">{{story.published_in}}, #{{story.issue}}</a>. {{story.published_date}}. ({{story.word_count}} words.)
                         </p>
                         {% if story.cover %}
                         <div class="mobile-cover">
                             <a target="__blank" href="{{story.piece_url}}">
-                                <img src="{{story.cover.url}}" alt="Cover of {{story.publisher}}, {{story.issue}" class="mobile-cover">
+                                <img src="{{story.cover.url}}" alt="Cover of {{story.published_in}}, {{story.issue}" class="mobile-cover">
                             </a>
                         </div>
                         {% endif %}
@@ -71,6 +76,12 @@
                             <div class="piece-tags">
                                 {{story.tags}}
                             </div>
+                            {% for review in reviews %}
+                                {% if review.piece == story %}
+                                    <div class="short-review">Reviewed by {{review.author}}, <a href="{{review.review_url}}">{{review.review_venue}}</a>: "{{review.review_pull_quote}}"
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                 </div>
             {% endfor %}

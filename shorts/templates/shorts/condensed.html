@@ -3,6 +3,11 @@
 {% block body_block %}
     <h1>Condensed Works</h1>
         <div class="central-card card-dark">
+            <div class="card">
+                <p class="attribution">
+                    You are currently viewing a condensed list of all works. If you would like to see covers, pull quotes, and reviews, please click to go to the <a href="{% url 'shorts' %}">detailed list</a>.
+                </p>
+            </div>
         {% if unpubbed %}
             <h3><span class="highlighter">Pending Publication</span></h3>
                 {% for story in unpubbed %}
