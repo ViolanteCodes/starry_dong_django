@@ -6,8 +6,8 @@ from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .forms import ContactForm
-from mysite.settings import get_secret
 from django.conf import settings
+from mysite.settings import get_secret
 
 def contactView(request):
     if request.method == 'GET':
@@ -19,7 +19,7 @@ def contactView(request):
             from_email = form.cleaned_data['from_email']
             message = form.cleaned_data['message']
             try:
-                send_mail(subject, message, from_email, ['maria@mariadong.com'], fail_silently=False)
+                send_mail(subject, message, from_email, [get_secret('EMAIL_HOST_USER')], fail_silently=False)
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('success')

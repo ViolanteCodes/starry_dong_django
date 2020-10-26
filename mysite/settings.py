@@ -39,10 +39,10 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 DEFAULT_FROM_EMAIL = get_secret('DEFAULT_FROM_EMAIL')
-EMAIL_HOST = get_secret('EMAIL_HOST')
+EMAIL_HOST = 'mail.privateemail.com'
 EMAIL_HOST_USER = get_secret('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = get_secret('EMAIL_HOST_PASSWORD') # new
-EMAIL_PORT = 465 # new
+EMAIL_HOST_PASSWORD = get_secret('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = 587 # new
 EMAIL_USE_TLS = True # new
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' # new
 
