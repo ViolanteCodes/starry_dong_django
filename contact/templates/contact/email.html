@@ -4,7 +4,26 @@
     <div class="central-card card-dark">
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        <div class="card fieldwrapper">
+            {{form.sender_name.errors}}
+            <label for "{{form.sender_name.id_for_label}}">Please enter your name.</label>
+            {{form.sender_name}}
+        </div>
+        <div class="card fieldwrapper">
+            {{form.sender_email.errors}}
+            <label for "{{form.sender_email.id_for_label}}">Please enter your email address.</label>
+            {{form.sender_email}}
+        </div>
+        <div class="card fieldwrapper">
+            {{form.subject.errors}}
+            <label for "{{form.subject.id_for_label}}">Please enter a subject.</label>
+            {{form.subject}}
+        </div>
+        <div class="card fieldwrapper">
+            {{form.message.errors}}
+            <label for "{{form.message.id_for_label}}">What is your message?</label>
+            {{form.message}}
+        </div>
         <div class="form-actions">
         <button type="submit">Send</button>
         </div>
