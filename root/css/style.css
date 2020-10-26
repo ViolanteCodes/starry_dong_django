@@ -474,8 +474,7 @@ h4 a {
 h4 a:visited {
     color:#ccc88d;
 }
-/*-------------------EMAIL PAGE-----------------------------------*/
-
+/*-------------------CONTACT PAGE-----------------------------------*/
 .email-card {
     display: flex;
     flex-direction: column;
@@ -505,7 +504,7 @@ h4 a:visited {
     margin: 0 0 0 0;
     font-family: 'Merriweather', serif;
     border: 5px dashed #d41dda;
-    flex-basis: 1;
+    max-width: 80vw;
     text-align:center;
     align-self: center;
 }
