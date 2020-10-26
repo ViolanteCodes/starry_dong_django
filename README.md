@@ -1,12 +1,8 @@
 # Starry Dong Django
 
-![A Screenshot of the Landing Page]
-(root/images/git_screenshots/screenshot_landing.png) 
-"A screenshot of the landing page")
+![A Screenshot of the Landing Page](root/images/git_screenshots/screenshot_landing.png?raw=True "A screenshot of the landing page")
 
-![A Screenshot of the Short Fiction Page]
-(root/images/git_screenshots/screenshot_fiction.png) 
-"A screenshot of the Short Fiction page")
+![A Screenshot of the Short Fiction Page](root/images/git_screenshots/screenshot_fiction.png?raw=True "A screenshot of the Short Fiction page")
 
 Hello! Welcome to Starry_Dong_Django, a Django site built by me,
 Maria Violante, using the Django web framework for Python. Although this
