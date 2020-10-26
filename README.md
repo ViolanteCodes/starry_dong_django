@@ -1,5 +1,13 @@
 # Starry Dong Django
 
+![A Screenshot of the Landing Page]
+(root/images/git_screenshots/screenshot_landing.png) 
+"A screenshot of the landing page")
+
+![A Screenshot of the Short Fiction Page]
+(root/images/git_screenshots/screenshot_fiction.png) 
+"A screenshot of the Short Fiction page")
+
 Hello! Welcome to Starry_Dong_Django, a Django site built by me,
 Maria Violante, using the Django web framework for Python. Although this
 is a personal project that's somewhat on the simple side, I'm quite
@@ -27,6 +35,10 @@ utilize one-to-many Foreign-Key relationships.
 - The short fiction app also includes custom views, including detailed
 views for all pieces, a condensed bibliographic view, and genre-sorted
 views for pieces only in specific fiction genres.
+
+Additionally, secrets required by the project (keys, email passwords,
+etc, are stored in a secrets.json file, with a get_secret() function
+written into settings to make for easier and more secure deployment.)
 
 ### CSS and Javascript
 - A custom javascript + CSS theme, "Starry Dong", which features high-
