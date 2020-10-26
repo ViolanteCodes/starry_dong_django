@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block body_block %}
+    <h1>Contact Maria Dong</h1>
+    <div class="central-card card-dark">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="form-actions">
+        <button type="submit">Send</button>
+        </div>
+    </form>
+    </div>
+{% endblock %}

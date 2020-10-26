@@ -28,6 +28,8 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('testimonials/', include('testimonials.urls')),
     path('shorts/', include('shorts.urls')),
+    path('contact/', include('contact.urls')),
+
 ]
 
 from . import views, settings
