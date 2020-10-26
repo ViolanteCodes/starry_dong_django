@@ -38,6 +38,7 @@ class Piece(models.Model):
     published_in = models.ForeignKey(Publisher, on_delete=models.CASCADE)
     issue = models.CharField(max_length=200, blank=True)
     piece_url = models.URLField(blank=True)
+    audio_url = models.URLField(blank=True)
     pull_quote = models.TextField()
     tags = models.CharField(max_length=200, blank=True)
     created_date = models.DateField(blank=True, null=True)

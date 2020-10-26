@@ -42,9 +42,9 @@ contrast text and larger than average fonts chosen for readability, in
 in an effort to increase accessibility for those with visual impairments.
 - Beautiful, full-screen parallax scrolling display with animation.
 - Fully responsive; mobile-breakpoints implemented through media
-queries, viewpoint and other relative units, and a frankly ridiculous
+queries, viewport and other relative units, and a frankly ridiculous
 amount of flexbox.
-- Slideout menu with flex-box header for mobile devices.
+- Slideout menu with flexbox header for mobile devices.
 
 ### Current Status:
 - We're in the home stretch! There's just some final styling to do, as
