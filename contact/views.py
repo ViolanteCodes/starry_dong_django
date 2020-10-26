@@ -19,7 +19,14 @@ def contactView(request):
             sender_email = form.cleaned_data['sender_email']
             from_email = 'maria@mariadong.com'
             sender_name = form.cleaned_data['sender_name']
+            sender_subject = form.cleaned_data['sender_subject']
             message = form.cleaned_data['message']
+            full_message = "You have the following contact form submission from Maria Dong.com:\n\n"""
+            full_message += f"\n\tFrom Sender: {sender_name}."
+            full_message += f"\n\tSender's email: {sender_email}."
+            full_message += f"\n\tSubject: {sender_subject}."
+            full_message += f"\n\tMessage:\n\n\t{message}"
+            message = full_message
 
             try:
                 send_mail(subject, message, from_email, ['maria@mariadong.com'], fail_silently=False)
