@@ -14,6 +14,7 @@ class Genre(models.Model):
         return self.name
 
 class Publisher(models.Model):
+    """A representation of a publisher"""
     publisher_name = models.CharField(max_length=200)
 
     def publish(self):
@@ -52,6 +53,7 @@ class Piece(models.Model):
         return self.title
 
 class Review(models.Model):
+    """A representation of a review in a review outlet."""
     piece = models.ForeignKey(Piece, on_delete=models.CASCADE)
     author = models.CharField(max_length=200, blank=True)
     review_url = models.URLField()
