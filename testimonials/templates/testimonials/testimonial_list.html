@@ -4,7 +4,7 @@
     <div class="card card-dark">
         <p>Note: Click on any of the authors below to jump to their full testimonial.</p>
         <ul>{% for testimonial in testimonials %}
-        <li>"{{ testimonial.pull_quote|lower|capfirst }}." <a href="#{{testimonial.pk}}">{{testimonial.author}}</a></li>
+        <li>"{{ testimonial.pull_quote|lower|capfirst }}" <a href="#{{testimonial.pk}}">-{{testimonial.author}}</a></li>
         {% endfor %}
         </ul>
     </div>

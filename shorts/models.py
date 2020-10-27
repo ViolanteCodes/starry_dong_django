@@ -43,7 +43,7 @@ class Piece(models.Model):
     pull_quote = models.TextField()
     tags = models.CharField(max_length=200, blank=True)
     created_date = models.DateField(blank=True, null=True)
-    pending_date = models.DateField(blank=True, null=False)
+    pending_date = models.DateField(blank=True, null=True)
     published_date = models.DateField(blank=True, null=True)
     cover = models.ImageField(blank=True, null=True, upload_to='covers')
 
