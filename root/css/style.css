@@ -508,6 +508,26 @@ h4 a:visited {
     text-align:center;
     align-self: center;
 }
+.email-card button {
+    background-color: rgba(3, 3, 3, 0.8);
+    padding: 10px 10px 10px 10px;
+    color: #ccc88d;
+    font-size: 20px;
+    font-weight: 300px;
+    letter-spacing: 3px;
+    word-spacing: 10px;
+    margin: 0 0 0 0;
+    font-family: 'Merriweather', serif;
+    border: 2px dashed #d41dda;
+    text-align:center;
+    align-self: center;
+    transition: ease 0.5s;
+    border-radius: 5px;
+}
+.email-card button:hover {
+    color: rgba(3, 3, 3, 0.8);
+    background-color: #ccc88d;
+}
 /*--------------FOOTER STYLING------------------------------------*/
 footer {
     font-size: 50px;
