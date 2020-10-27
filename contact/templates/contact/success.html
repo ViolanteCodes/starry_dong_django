@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block body_block %}
+    <h1>Thank You!</h1>
+    <div class="card-dark card">
+       <p>Your email has been sent.</p>
+       <p>Click to go back to the <a href="{% url 'about' %}">about page</a>.</p>
+       <p>Click to go back to the <a href="{% url 'landing' %}">landing page</a>.</p>
+    </div>
+{% endblock %}
