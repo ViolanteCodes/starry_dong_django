@@ -3,10 +3,17 @@
     <h1>{{ post.title }}</h1>    
     <div class="central-card card-dark">
         {% if post.published_date %}
-            <div>
+            <div class="annotation">
                 {{ post.published_date }}
             </div>
         {% endif %}
         <p>{{ post.text|linebreaksbr }}</p>
+        {% if tags %}
+            <p class = 'piece-tags'>
+            {% for tag in tags %}
+                #{{tag.name}}  
+            {% endfor %}
+            </p>
+        {% endif %}
     </div>
 {% endblock %}
