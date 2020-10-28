@@ -5,7 +5,7 @@
     <div class="card card-dark annotation">
         <p>Click to view a <a href="{% url 'condensed' %}">condensed list</a> in bibliography form. You can also sort pieces by genre:
         {% for genre in genres %}
-            <a href="{% url 'genre' genre=genre %}">{{genre.name}}</a>
+            <a href="{% url 'genre' genre.slug %}">{{genre.name}}</a>
         {% endfor %}
         </p>
     </div>

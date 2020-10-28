@@ -2,10 +2,12 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
+
 # Create your models here.
 
 class Genre(models.Model):
     name = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200, null=True, blank=True)
 
     def publish(self):
         self.save()

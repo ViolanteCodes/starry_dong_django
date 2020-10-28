@@ -143,13 +143,9 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'root')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-# STATICFILES_DIRS = [
-#         os.path.join(BASE_DIR, 'static'),
-# ]
 
-if DEBUG:
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'static')
-    ]
-# else:
-#     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# Deployed Settings on Site
+# STATIC_URL = '/static/'
+# STATIC_ROOT = '/home/mariyamq/public_html/static'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'

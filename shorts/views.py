@@ -15,8 +15,8 @@ def condensed(request):
     pubbed = Piece.objects.filter(published_date__isnull=False).order_by('-published_date')
     return render(request, 'shorts/condensed.html', {'unpubbed': unpubbed, 'pubbed':pubbed})
 
-def by_genre(request, genre):
-    genre = get_object_or_404(Genre, name=genre)
+def by_genre(request, slug):
+    genre = get_object_or_404(Genre, slug=slug)
     reviews = Review.objects.all()
     unpubbed = Piece.objects.filter(genre=genre, published_date__isnull=True).order_by('-pending_date')
     pubbed = Piece.objects.filter(genre=genre, published_date__isnull=False).order_by('-published_date')
