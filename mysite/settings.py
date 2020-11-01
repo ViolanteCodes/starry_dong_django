@@ -152,9 +152,11 @@ if DEBUG == True:
     STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static')
     ]
+#shared hosting setting
+# if DEBUG == False:
+#     STATIC_ROOT = '/home/mariyamq/public_html/static'
+#python anywhere setting
 if DEBUG == False:
-    STATIC_ROOT = '/home/mariyamq/public_html/static'
-
+    STATIC_ROOT = '/home/mariadong/starry_dong_django/static'
 # Deployed Settings on Site
-# STATIC_URL = '/static/'
 # STATIC_ROOT = '/home/mariyamq/public_html/static'
