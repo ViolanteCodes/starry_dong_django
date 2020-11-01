@@ -1,2 +1,2 @@
 pymysql
-django==2.2
+Django~=2.2.4
