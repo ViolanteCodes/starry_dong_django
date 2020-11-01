@@ -34,14 +34,14 @@ def get_secret(setting, secrets=secrets):
 SECRET_KEY = get_secret('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['www.mariadong.com', 'mariadong.com', 'localhost', '127.0.0.1',
 'www.pythonanywhere.com', 'pythonanywhere.com', 'www.mariadong.pythonanywhere.com', 
 'mariadong.pythonanywhere.com']
 
 DEFAULT_FROM_EMAIL = get_secret('DEFAULT_FROM_EMAIL')
-EMAIL_HOST = 'smtppro.zoho.com'
+EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_HOST_USER = get_secret('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = get_secret('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587 # new
