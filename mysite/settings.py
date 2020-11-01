@@ -36,7 +36,7 @@ SECRET_KEY = get_secret('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.mariadong.com', 'mariadong.com', 'localhost', '127.0.0.1']
 
 DEFAULT_FROM_EMAIL = get_secret('DEFAULT_FROM_EMAIL')
 EMAIL_HOST = 'mail.privateemail.com'
@@ -140,7 +140,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'root')
+if DEBUG == True:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'root')
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static')
+    ]
+if DEBUG == False:
+    STATIC_ROOT = '/home/mariyamq/public_html/static'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
