@@ -160,6 +160,3 @@ if DEBUG == False:
     STATIC_ROOT = '/home/mariadong/starry_dong_django/static'
 # Deployed Settings on Site
 # STATIC_ROOT = '/home/mariyamq/public_html/static'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
