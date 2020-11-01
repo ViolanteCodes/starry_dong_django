@@ -47,7 +47,7 @@ class Piece(models.Model):
     created_date = models.DateField(blank=True, null=True)
     pending_date = models.DateField(blank=True, null=True)
     published_date = models.DateField(blank=True, null=True)
-    cover = models.ImageField(blank=True, null=True, upload_to='covers')
+    cover = models.URLField(blank=True, null=True)
 
     def publish(self):
         self.save()
