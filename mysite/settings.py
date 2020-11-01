@@ -41,7 +41,7 @@ ALLOWED_HOSTS = ['www.mariadong.com', 'mariadong.com', 'localhost', '127.0.0.1',
 'mariadong.pythonanywhere.com']
 
 DEFAULT_FROM_EMAIL = get_secret('DEFAULT_FROM_EMAIL')
-EMAIL_HOST = 'mail.privateemail.com'
+EMAIL_HOST = 'smtppro.zoho.com'
 EMAIL_HOST_USER = get_secret('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = get_secret('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587 # new
