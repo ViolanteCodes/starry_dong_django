@@ -147,11 +147,7 @@ if DEBUG == True:
     ]
 if DEBUG == False:
     STATIC_ROOT = '/home/mariyamq/public_html/static'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
 
 # Deployed Settings on Site
 # STATIC_URL = '/static/'
 # STATIC_ROOT = '/home/mariyamq/public_html/static'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# MEDIA_URL = '/media/'
