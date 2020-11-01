@@ -36,7 +36,9 @@ SECRET_KEY = get_secret('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.mariadong.com', 'mariadong.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['www.mariadong.com', 'mariadong.com', 'localhost', '127.0.0.1',
+'www.pythonanywhere.com', 'pythonanywhere.com', 'www.mariadong.pythonanywhere.com', 
+'mariadong.pythonanywhere.com']
 
 DEFAULT_FROM_EMAIL = get_secret('DEFAULT_FROM_EMAIL')
 EMAIL_HOST = 'mail.privateemail.com'
