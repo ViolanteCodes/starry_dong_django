@@ -2,10 +2,10 @@
     <h2 class="header-card-dark">Pending Publication</h2>
     {% for story in unpubbed %}
     <div class="card card-dark pieces-row">
-        {% if story.cover %}
+        {% if story.cover_url %}
             <div>
                 <a target="__blank" href="{{story.piece_url}}">
-                    <img src="{{story.cover.url}}" alt="Cover of {{story.published_in}}, {{story.issue}" class="piece-cover">
+                    <img src="{{story.cover_url}}" alt="Cover of {{story.published_in}}, {{story.issue}" class="piece-cover">
                 </a>
             </div>
         {% endif %}
@@ -14,10 +14,10 @@
                 <span class="piece-title">{{story.title}}. </span>
                 <a href="{{story.piece_url}}" target="_blank">{{story.published_in}}, #{{story.issue}}</a>. Date pending. ({{story.word_count}} words.)
             </p>
-            {% if story.cover %}
+            {% if story.cover_url %}
             <div class="mobile-cover">
                 <a target="__blank" href="{{story.piece_url}}">
-                    <img src="{{story.cover.url}}" alt="Cover of {{story.published_in}}, {{story.issue}" class="mobile-cover">
+                    <img src="{{story.cover_url}}" alt="Cover of {{story.published_in}}, {{story.issue}" class="mobile-cover">
                 </a>
             </div>
             {% endif %}
@@ -40,10 +40,10 @@
     <h2 class="header-card-dark">Published Pieces</h2>
         {% for story in pubbed %}
             <div class="card card-dark pieces-row">
-                {% if story.cover %}
+                {% if story.cover_url %}
                     <div>
                         <a target="_blank" href="{{story.piece_url}}">
-                            <img src="{{story.cover.url}}" alt="Cover of {{story.published_in}}, {{story.issue}" class="piece-cover">
+                            <img src="{{story.cover_url}}" alt="Cover of {{story.published_in}}, {{story.issue}" class="piece-cover">
                         </a>
                     </div>
                 {% endif %}
@@ -52,10 +52,10 @@
                         <span class="piece-title">{{story.title}}. </span>
                         <a href="{{story.piece_url}}" target="_blank">{{story.published_in}}, #{{story.issue}}</a>. {{story.published_date}}. ({{story.word_count}} words.)
                     </p>
-                    {% if story.cover %}
+                    {% if story.cover_url %}
                     <div class="mobile-cover">
                         <a target="_blank" href="{{story.piece_url}}">
-                            <img src="{{story.cover.url}}" alt="Cover of {{story.published_in}}, {{story.issue}" class="mobile-cover">
+                            <img src="{{story.cover_url}}" alt="Cover of {{story.published_in}}, {{story.issue}" class="mobile-cover">
                         </a>
                     </div>
                     {% endif %}
