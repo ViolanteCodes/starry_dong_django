@@ -27,6 +27,7 @@ def contactView(request):
             full_message += f"\n\tSubject: {sender_subject}."
             full_message += f"\n\tMessage:\n\n\t{message}"
             message = full_message
+            human = True
 
             try:
                 send_mail(subject, message, from_email, ['maria@mariadong.com'], fail_silently=False)

@@ -28,6 +28,13 @@
             <label for "{{form.message.id_for_label}}">What is your message?</label>
             <p>{{form.message}}</p>
         </div>
+        <div class="fieldwrapper email-card">
+            {{form.captcha.errors}}
+            <p>
+                <label for "{{form.captcha.id_for_label}}">Please verify you're not a bot...</label>
+            </p>
+            <p class="fieldwrapper email-card">{{form.captcha}}</p>
+        </div>
         <div class="form-actions email-card">
         <button type="submit" class="email-card">Send</button>
         </div>

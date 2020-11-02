@@ -29,7 +29,7 @@ urlpatterns = [
     path('testimonials/', include('testimonials.urls')),
     path('shorts/', include('shorts.urls')),
     path('contact/', include('contact.urls')),
-
+    path('captcha/', include('captcha.urls')),
 ]
 
 from . import views, settings

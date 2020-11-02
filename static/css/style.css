@@ -524,6 +524,16 @@ h4 a:visited {
     transition: ease 0.5s;
     border-radius: 5px;
 }
+}
+#id_captcha_1 {
+    display: block;
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+.full-width {
+    flex-basis: 1;
+}
 .email-card button:hover {
     color: rgba(3, 3, 3, 0.8);
     background-color: #ccc88d;
