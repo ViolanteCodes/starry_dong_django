@@ -1,13 +1,16 @@
 # Starry Dong Django
 
-![A Screenshot of the Landing Page](root/images/git_screenshots/screenshot_landing.png?raw=True "A screenshot of the landing page")
+![A Screenshot of the Landing Page](static/images/git_screenshots/screenshot_landing.png?raw=True "A screenshot of the landing page")
 
-![A Screenshot of the Short Fiction Page](root/images/git_screenshots/screenshot_fiction.png?raw=True "A screenshot of the Short Fiction page")
+![A Screenshot of the Short Fiction Page](static/images/git_screenshots/screenshot_fiction.png?raw=True "A screenshot of the Short Fiction page")
 
 Hello! Welcome to Starry_Dong_Django, a Django site built by me,
-Maria Violante, using the Django web framework for Python. Although this
-is a personal project that's somewhat on the simple side, I'm quite
-proud of it! This project is for an author / short fiction writer that
+Maria Violante, using the Django web framework for Python. 
+Although this is a personal project and somewhat on the simple side,
+with primarily function-based vs class-based views, it's my first
+Django project, and I'm quite proud of it!
+
+This project is for an author / short fiction writer that
 also does developmental and line-editing, so all models and views have
 been tailored with that in mind.
 
@@ -19,7 +22,7 @@ Starry_Dong_Django features:
 This project has been subdivided into a number of functional apps,
 including:
 - a simple blog app with list and detail views
-- a contact app for contact forms
+- a contact app for contact forms, using django simple-recaptcha
 - testimonials app for editorial testimonials, which generates an
 internally-linked testimonials page (pull quotes linked to full reviews
 by leveraging primary keys.)
@@ -47,6 +50,32 @@ amount of flexbox.
 - Slideout menu with flexbox header for mobile devices.
 
 ### Current Status:
-- We're in the home stretch! There's just some final styling to do, as
-well as the 404 page and all that jazz, and then we'll be moving on
-to the next step: deployment on a host server!
+- This project was recently deployed to mariadong.com - first via
+shared hosting, but then switched over to pythonanywhere due to some
+issues with updating through the admin panel and the limitations of 
+shared hosting (django 2.1 only, etc.). 
+
+### Current Plans:
+
+There are some changes that are planned for when I get around to it:
+- Add a browser query option to disable animations for improved 
+accessibility.
+- Figure out how to integrate espeak with django-simple-recatpcha for 
+audio captcha option, as it appears python anywhere doesn't currently
+support flite.
+
+### Notes on Cloning:
+
+If you'd like to run this project yourself, you can either set up a 
+secrets.json file and put in key,value pairs for the options currently
+listed with a get_secrets() function in settings.py, or you can just
+change those options to your keys for testing.
+
+Additionally, static files will not load in a local environment unless
+DEBUG is set to True--as DEBUG==False instead loads them from a local 
+environment folder on my hosting server.
+
+Note: Is this great security? Am I breaking the "static root and static
+files shouldn't be the same folder rule?" (Yep and yep! But I like 
+the convenience of doing a git pull to update my page on PA, and 
+nobody pushes into this repo but me!)
