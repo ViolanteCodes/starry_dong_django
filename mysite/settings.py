@@ -34,7 +34,7 @@ def get_secret(setting, secrets=secrets):
 SECRET_KEY = get_secret('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['www.mariadong.com', 'mariadong.com', 'localhost', '127.0.0.1',
 'www.pythonanywhere.com', 'pythonanywhere.com', 'www.mariadong.pythonanywhere.com', 
@@ -48,7 +48,12 @@ EMAIL_PORT = 587 # new
 EMAIL_USE_TLS = True # new
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' # new
 
-# Application definition
+# Django Simple Captcha:
+CAPTCHA_FONT_SIZE = 60
+CAPTCHA_BACKGROUND_COLOR = '#000000'
+CAPTCHA_FOREGROUND_COLOR = '#ffffff'
+CAPTCHA_ESPEAK_PATH = os.environ.get("CAPTCHA_ESPEAK_PATH", None)
+CAPTCHA_ESPEAK_LANGUAGE = "-vde"
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -61,6 +66,7 @@ INSTALLED_APPS = [
     'testimonials.apps.TestimonialsConfig',
     'shorts.apps.ShortsConfig',
     'contact.apps.ContactConfig',
+    'captcha',
 ]
 
 MIDDLEWARE = [
