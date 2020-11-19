@@ -3,7 +3,7 @@
 {% block body_block %}
     <h1>Short Fiction</h1>
     <div class="card card-dark annotation">
-        <p>Click to view a <a href="{% url 'condensed' %}">condensed list</a> in bibliography form. You can also sort pieces by genre:
+        <p>Click to view a <a href="{% url 'condensed' %}">condensed list</a>. You can also sort pieces by genre:
         {% for genre in genres %}
             <a href="{% url 'genre' genre.slug %}">{{genre.name}}</a>
         {% endfor %}
