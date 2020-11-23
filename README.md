@@ -22,7 +22,9 @@ Starry_Dong_Django features:
 This project has been subdivided into a number of functional apps,
 including:
 - a simple blog app with list and detail views
-- a contact app for contact forms, using django simple-recaptcha
+- a contact app for contact forms, using django simple-recaptcha (this has
+been changed to a simple instructions-following puzzle due to 
+accessibility concerns.)
 - testimonials app for editorial testimonials, which generates an
 internally-linked testimonials page (pull quotes linked to full reviews
 by leveraging primary keys.)

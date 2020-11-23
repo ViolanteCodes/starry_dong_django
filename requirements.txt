@@ -1,4 +1,3 @@
 pymysql
 Django==2.2.16
 Pillow==8.0.1
-django-simple-captcha-audio-espeak==0.5.13
