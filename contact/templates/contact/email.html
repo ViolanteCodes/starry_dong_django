@@ -29,11 +29,11 @@
             <p>{{form.message}}</p>
         </div>
         <div class="fieldwrapper email-card">
-            {{form.captcha.errors}}
+            {{form.dong_field.errors}}
             <p>
-                <label for "{{form.captcha.id_for_label}}">Please verify you're not a bot...</label>
+                <label for "{{form.dong_field.id_for_label}}">Verify you're not a bot by entering my last name in the box.</label>
             </p>
-            <p class="fieldwrapper email-card">{{form.captcha}}</p>
+            <p class="fieldwrapper email-card">{{form.dong_field}}</p>
         </div>
         <div class="form-actions email-card">
         <button type="submit" class="email-card">Send</button>
