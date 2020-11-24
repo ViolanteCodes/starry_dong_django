@@ -7,7 +7,9 @@
                 {{ post.published_date }}
             </div>
         {% endif %}
-        <p>{{ post.text|linebreaksbr }}</p>
+        {% autoescape off %}
+        <p>{{ post.text|linebreaksbr|safe }}</p>
+        {% endautoescape %}
         {% if tags %}
             <p class = 'piece-tags'>
             {% for tag in tags %}
