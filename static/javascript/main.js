@@ -40,51 +40,49 @@ window.addEventListener('pageshow', function (event) {
 const menuIcon = document.getElementById("menu-icon");
 const slideoutMenu = document.getElementById("slideout-menu");
 
-menuIcon.addEventListener('click', function() {
-    if(slideoutMenu.style.opacity == "1") {
-        slideoutMenu.style.opacity = "0";
+function fadeMenu() {
+    var slideoutMenu = document.getElementById("slideout-menu");
+    if(slideoutMenu.style.display == "block") {
+        slideoutMenu.style.display = "none";
         slideoutMenu.style.pointerEvents = 'none';
     } else {
-        slideoutMenu.style.opacity = '1';
+        slideoutMenu.style.display = 'block';
         slideoutMenu.style.pointerEvents = 'auto';
     }
-});
-
-slideoutMenu.addEventListener('click', function() {
-    if(slideoutMenu.style.opacity == "1") {
-        slideoutMenu.style.opacity ="0";
-        slideoutMenu.style.pointerEvents ='none';
+}
+function MenuOn() {
+    var slideoutMenu = document.getElementById("slideout-menu");
+    if(slideoutMenu.style.display == "block") {
+        slideoutMenu.style.display = "block";
+        slideoutMenu.style.pointerEvents = 'auto';
+    } else {
+        slideoutMenu.style.display = 'block';
+        slideoutMenu.style.pointerEvents = 'auto';
     }
-});
-
-// const searchIcon = document.getElementById("search-icon");
-// const searchBox = document.getElementById("search-box");
-
-// function rudrSwitchTab(rudr_tab_id, rudr_tab_content) {
-// 	// first of all we get all tab content blocks (I think the best way to get them by class names)
-// 	var x = document.getElementsByClassName("tabcontent");
-// 	var i;
-// 	for (i = 0; i < x.length; i++) {
-// 		x[i].style.display = 'none'; // hide all tab content
-// 	}
-// 	document.getElementById(rudr_tab_content).style.display = 'block'; // display the content of the tab we need
- 
-// 	// now we get all tab menu items by class names (use the next code only if you need to highlight current tab)
-// 	var x = document.getElementsByClassName("tabmenu");
-// 	var i;
-// 	for (i = 0; i < x.length; i++) {
-// 		x[i].className = 'tabmenu'; 
-// 	}
-// 	document.getElementById(rudr_tab_id).className = 'tabmenu active';
-// }
-
-// searchIcon.addEventListener('click', function() {
-//     if(searchBox.style.top == '2em') {
-//         searchBox.style.top = '0px';
-//         searchBox.style.pointerEvents = 'none';
+}
+function MenuOff() {
+    var slideoutMenu = document.getElementById("slideout-menu");
+    if(slideoutMenu.style.display == "block") {
+        slideoutMenu.style.display = "none";
+        slideoutMenu.style.pointerEvents = 'none';
+    } else {
+        slideoutMenu.style.display = 'none';
+        slideoutMenu.style.pointerEvents = 'none';
+    }
+}
+// menuIcon.addEventListener('click', function() {
+//     if(slideoutMenu.style.opacity == "1") {
+//         slideoutMenu.style.opacity = "0";
+//         slideoutMenu.style.pointerEvents = 'none';
 //     } else {
-//         searchBox.style.top = '2em';
-//         searchBox.style.pointerEvents = 'auto';
+//         slideoutMenu.style.opacity = '1';
+//         slideoutMenu.style.pointerEvents = 'auto';
 //     }
 // });
 
+// slideoutMenu.addEventListener('click', function() {
+//     if(slideoutMenu.style.opacity == "1") {
+//         slideoutMenu.style.opacity ="0";
+//         slideoutMenu.style.pointerEvents ='none';
+//     }
+// });

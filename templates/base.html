@@ -18,41 +18,41 @@
         fadeInPage();
     </script>
     <div class="page-container">
-        <div id="slideout-menu">
+        <nav id="slideout-menu" tabindex="0" aria-label="Mobile Menu">
             <ul>
                 <li>
-                    <a href="{% url 'shorts' %}">Short Fiction</a>
+                    <a href="{% url 'shorts' %}" tabindex="0">Short Fiction</a>
                 </li>
                 <li>
-                    <a href="{% url 'editorial' %}">Editorial</a>
+                    <a href="{% url 'editorial' %}" tabindex="0">Editorial</a>
                 </li>
                 <li>
-                    <a href="{% url 'about' %}">About</a>
+                    <a href="{% url 'about' %}" tabindex="0">About</a>
                 </li>
                 <li>
-                    <a href="{% url 'contact' %}">Contact</a>
+                    <a href="{% url 'contact' %}" tabindex="0">Contact</a>
                 </li>
                 <li>
-                    <a href="{% url 'post_list' %}">Blog</a>
+                    <a href="{% url 'post_list' %}" tabindex="0">Blog</a>
                 </li>
                 <li>
-                    <a href="{% url 'ubw' %}">Black Writers Project</a>
+                    <a href="{% url 'ubw' %}" tabindex="0" id="ubw" onkeydown="MenuOff()">Black Writers Project</a>
                 </li>
             </ul>
-        </div>  
+        </nav>  
         <div class="header-box floating">
             <div id="menu-icon" class="header-font floating">
-                <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+                <i class="fa fa-angle-double-down" tabindex="1" onclick="fadeMenu()" onkeydown="MenuOn()"></i>
             </div>
             <div class="header-font floating">
-                <a href="{% url 'landing' %}">MARIA DONG</a>
+                <a href="{% url 'landing' %}" tabindex="-1">MARIA DONG</a>
             </div>
             <div class="sub-header">
-                <a href="{% url 'shorts' %}">Sci-Fi & Fantasy</a>
+                <a href="{% url 'shorts' %}" tabindex="-1">Sci-Fi & Fantasy</a>
             </div>
             <div class="spacer"></div>
         </div>
-        <nav class="menu-bar">
+        <nav class="menu-bar" aria-label="Full Width Menu" id="menu-bar">
             <ul>
                 <li>
                     <a href="{% url 'shorts' %}">Fiction</a>
@@ -77,8 +77,8 @@
             <div></div>
         </main>
         <footer>
-            <ul id="footer-list"><li><a href="https://twitter.com/mariadongwrites" target="_blank"><i class="fa fa-twitter" aria-hidden="true" id="twitter-icon"></i></a></li>
-                <li><a href="{% url 'contact' %}"><i class="fa fa-envelope" aria-hidden="true" id="email-icon"></i></a></li>
+            <ul id="footer-list"><li><a href="https://twitter.com/mariadongwrites" target="_blank"><i class="fa fa-twitter" id="twitter-icon"></i></a></li>
+                <li><a href="{% url 'contact' %}"><i class="fa fa-envelope" id="email-icon"></i></a></li>
             </ul>
         </footer>
     </div>
