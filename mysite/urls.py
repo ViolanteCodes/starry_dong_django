@@ -29,7 +29,6 @@ urlpatterns = [
     path('testimonials/', include('testimonials.urls')),
     path('shorts/', include('shorts.urls')),
     path('contact/', include('contact.urls')),
-    path('captcha/', include('captcha.urls')),
 ]
 
 from . import views, settings
@@ -38,3 +37,4 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
  
  
 urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
