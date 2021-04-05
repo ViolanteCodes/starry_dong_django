@@ -18,3 +18,11 @@ def mailchimp_integration_script(format_html=True):
         return settings.MAILCHIMP_INTEGRATION_SCRIPT
     else:
         return ""
+
+@register.simple_tag
+def mailchimp_landing_link():
+    """PUll landing page link out of settings."""
+    if settings.MAILCHIMP_LANDING_PAGE_LINK:
+        return settings.MAILCHIMP_LANDING_PAGE_LINK
+    else:
+        return ""
