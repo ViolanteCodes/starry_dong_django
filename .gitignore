@@ -4,7 +4,11 @@
 __pycache__
 myvenv
 db.sqlite3
+*.sqlite3
 .DS_Store
 *.py[co]
 *.sw[po]
 /secrets.json
+.env
+.venv
+/dongvenv/
