@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 {% block body_block %}
 {% load static %}
+{% load custom_filters %}
 <h1>About Maria</h1>
 <div class="card photo-box card-dark">
     <img src="{% static 'images/author_photo.jpg' %}" alt="A black and white photo of Maria Dong" class="author-image">
 </div>
 <div class="card card-dark"><p>
     Maria Dong's short 
-    fiction has been published in a number of magazines, including Augur, 
+    fiction has been published in a number of magazines, including Nightmare, Khoreo, Augur, 
     Apparition Lit, and Fusion Fragment, among others.
     Her Korean mythology inspired fantasy novel, 
     <span class="highlighter">BAD MOON CHILD</span>, was featured in the 2018 Pitch Wars showcase.</p>
@@ -16,7 +17,9 @@
     <p>
     She is represented by <a href="https://www.dystel.com/amy-bishop" target="blank">Amy Bishop</a> at Dystel, Goderich & Bourret. 
     She can also be reached via twitter <a href="https://twitter.com/mariadongwrites?lang=en" target="_blank">
-    @mariadongwrites</a> or via email with the <a href="{% url 'contact' %}">contact form</a>.
+    @mariadongwrites</a> or via email with the <a href="{% url 'contact' %}">contact form</a>. If you'd like to be
+    notified when new fiction is published, you can also sign up for the <a href="{% mailchimp_landing_link %}"
+    target="blank">newsletter</a>.
     </p>
 </div>
 <div class="card card-dark">
