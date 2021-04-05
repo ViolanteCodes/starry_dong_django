@@ -1,5 +1,6 @@
 {% load static %}
 <!-- Load Custom Filters -->
+{% load custom_filters %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -35,6 +36,9 @@
                 </li>
                 <li>
                     <a href="{% url 'post_list' %}" tabindex="0">Blog</a>
+                </li>
+                <li>
+                    <a href="{% mailchimp_landing_link %}" target="_blank" tabindex="0">Newsletter</a>
                 </li>
                 <li>
                     <a href="{% url 'ubw' %}" tabindex="0" id="ubw" onkeydown="MenuOff()">Black Writers Project</a>
