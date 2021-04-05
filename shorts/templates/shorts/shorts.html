@@ -1,12 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
+{% load custom_filters %}
 {% block body_block %}
     <h1>Short Fiction</h1>
     <div class="card card-dark annotation">
-        <p>Click to view a <a href="{% url 'condensed' %}">condensed list</a>. You can also sort pieces by genre:
+        <p>Click to view a <a href="{% url 'condensed' %}">condensed list</a>. <br>
+            You can also sort pieces by genre:<br>
         {% for genre in genres %}
             <a href="{% url 'genre' genre.slug %}">{{genre.name}}</a>
-        {% endfor %}
+        {% endfor %}<br>
+        If you'd like to be notified
+            when new stories are published, you can sign up for the <a href="{% mailchimp_landing_link %}"
+            target="blank">newsletter</a>.
         </p>
     </div>
     {% include 'shorts/detailed_story_block.html' %}
