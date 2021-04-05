@@ -7,7 +7,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .forms import ContactForm
 from django.conf import settings
-from mysite.settings import get_secret
 
 def contactView(request):
     if request.method == 'GET':
@@ -17,7 +16,7 @@ def contactView(request):
         if form.is_valid():
             subject = 'Contact Form Submission from MariaDong.com'
             sender_email = form.cleaned_data['sender_email']
-            from_email = 'maria@mariadong.com'
+            from_email = settings.CONTACT_EMAIL
             sender_name = form.cleaned_data['sender_name']
             sender_subject = form.cleaned_data['sender_subject']
             message = form.cleaned_data['message']
@@ -30,7 +29,7 @@ def contactView(request):
             human = True
 
             try:
-                send_mail(subject, message, from_email, ['maria@mariadong.com'], fail_silently=False)
+                send_mail(subject, message, from_email, [from_email], fail_silently=False)
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('success')

@@ -2,12 +2,18 @@
     <h2 class="header-card-dark">Pending Publication</h2>
     {% for story in unpubbed %}
     <div class="card card-dark pieces-row">
-        {% if story.cover %}
+        {% if story.cover_upload %}
             <div>
                 <a target="__blank" href="{{story.piece_url}}">
-                    <img src="{{story.cover}}" alt="Cover of {{story.published_in}}, {{story.issue}" class="piece-cover">
+                    <img src="{{story.cover_upload.url}}" alt="Cover of {{story.published_in}}, {{story.issue}" class="piece-cover">
                 </a>
             </div>
+        {% elif story.cover %}
+        <div>
+            <a target="__blank" href="{{story.piece_url}}">
+                <img src="{{story.cover}}" alt="Cover of {{story.published_in}}, {{story.issue}" class="piece-cover">
+            </a>
+        </div>
         {% endif %}
             <div class="pieces-list">
             <p class="pieces-p">
