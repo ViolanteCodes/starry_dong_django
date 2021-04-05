@@ -1,5 +1,5 @@
 {% load static %}
-<!DOCTYPE html>
+<!-- Load Custom Filters -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/2b2dcc1780.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block mailchimp %}{% endblock %}
 </head>
 <body>
     <svg id="fader" class="fade-out">

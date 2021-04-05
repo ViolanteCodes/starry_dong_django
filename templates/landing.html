@@ -1,6 +1,10 @@
 {% extends "base.html" %}
-{% block body_block %}
 {% load static %}
+{% load custom_filters %}
+{% block mailchimp %}
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","{% mailchimp_integration_script %}");</script>
+{% endblock %}
+{% block body_block %}
     <div class="spacer desktop-only">
     </div>
     <div class="cover-box">

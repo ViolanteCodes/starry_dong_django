@@ -29,6 +29,9 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = config('EMAIL_PORT', cast=int)
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
 
+#Mailchimp Integration
+MAILCHIMP_INTEGRATION_SCRIPT = config('MAILCHIMP_INTEGRATION_SCRIPT', default=None)
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
