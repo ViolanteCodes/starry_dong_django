@@ -5,7 +5,7 @@
         {% if story.cover_upload %}
             <div>
                 <a target="__blank" href="{{story.piece_url}}">
-                    <img src="{{story.cover_upload.url}}" alt="Cover of {{story.published_in}}, {{story.issue}}" class="piece-cover">
+                    <img src="{{story.cover_upload.url}}" alt="Cover of {{story.published_in}}, {% if story.issue %}{{story.issue}}{% endif%}" class="piece-cover">
                 </a>
             </div>
         {% elif story.cover %}
@@ -18,7 +18,7 @@
             <div class="pieces-list">
             <p class="pieces-p">
                 <span class="piece-title">{{story.title}}. </span>
-                <a href="{{story.piece_url}}" target="_blank">{{story.published_in}}, #{{story.issue}}</a>. Date pending. ({{story.word_count}} words.)
+                <a href="{{story.piece_url}}" target="_blank">{{story.published_in}}{% if story.issue %}, #{{story.issue}}{% endif %}</a>. Date pending. ({{story.word_count}} words.)
             </p>
             {% if story.cover %}
             <div class="mobile-cover">
@@ -62,7 +62,7 @@
                     <div class="pieces-list">
                     <p class="pieces-p">
                         <span class="piece-title">{{story.title}}. </span>
-                        <a href="{{story.piece_url}}" target="_blank">{{story.published_in}}, #{{story.issue}}</a>. {{story.published_date}}. ({{story.word_count}} words.)
+                        <a href="{{story.piece_url}}" target="_blank">{{story.published_in}}{% if story.issue %}, #{{story.issue}}{% endif %}</a>. {{story.published_date}}. ({{story.word_count}} words.)
                     </p>
                     {% if story.cover %}
                     <div class="mobile-cover">
