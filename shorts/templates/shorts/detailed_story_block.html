@@ -1,47 +1,3 @@
-{% if unpubbed %}
-    <h2 class="header-card-dark">Pending Publication</h2>
-    {% for story in unpubbed %}
-    <div class="card card-dark pieces-row">
-        {% if story.cover_upload %}
-            <div>
-                <a target="__blank" href="{{story.piece_url}}">
-                    <img src="{{story.cover_upload.url}}" alt="Cover of {{story.published_in}}, {% if story.issue %}{{story.issue}}{% endif%}" class="piece-cover">
-                </a>
-            </div>
-        {% elif story.cover %}
-        <div>
-            <a target="__blank" href="{{story.piece_url}}">
-                <img src="{{story.cover}}" alt="Cover of {{story.published_in}}, {{story.issue}}" class="piece-cover">
-            </a>
-        </div>
-        {% endif %}
-            <div class="pieces-list">
-            <p class="pieces-p">
-                <span class="piece-title">{{story.title}}. </span>
-                <a href="{{story.piece_url}}" target="_blank">{{story.published_in}}{% if story.issue %}, #{{story.issue}}{% endif %}</a>. Date pending. ({{story.word_count}} words.)
-            </p>
-            {% if story.cover %}
-            <div class="mobile-cover">
-                <a target="__blank" href="{{story.piece_url}}">
-                    <img src="{{story.cover}}" alt="Cover of {{story.published_in}}, {{story.issue}}" class="mobile-cover">
-                </a>
-            </div>
-            {% endif %}
-                <div class="piece-quote">
-                    {{story.pull_quote}}
-                </div>
-                <div class="piece-tags">
-                    {{story.tags}}
-                </div>
-                {% for review in reviews %}
-                    {% if review.piece == story %}
-                        <div>Reviews for this piece: {{review.pull_quote}}</div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-    </div>
-    {% endfor %}
-{% endif %}
 {% if pubbed %}
     <h2 class="header-card-dark">Published Pieces</h2>
         {% for story in pubbed %}
@@ -52,22 +8,16 @@
                             <img src="{{story.cover_upload.url}}" alt="Cover of {{story.published_in}}, {{story.issue}}" class="piece-cover">
                         </a>
                     </div>
-                {% elif story.cover %}
-                    <div>
-                        <a target="__blank" href="{{story.piece_url}}">
-                            <img src="{{story.cover}}" alt="Cover of {{story.published_in}}, {{story.issue}}" class="piece-cover">
-                        </a>
-                    </div>
                 {% endif %}
                     <div class="pieces-list">
                     <p class="pieces-p">
                         <span class="piece-title">{{story.title}}. </span>
                         <a href="{{story.piece_url}}" target="_blank">{{story.published_in}}{% if story.issue %}, #{{story.issue}}{% endif %}</a>. {{story.published_date}}. ({{story.word_count}} words.)
                     </p>
-                    {% if story.cover %}
+                    {% if story.cover_upload %}
                     <div class="mobile-cover">
                         <a target="__blank" href="{{story.piece_url}}">
-                            <img src="{{story.cover}}" alt="Cover of {{story.published_in}}, {{story.issue}}" class="mobile-cover">
+                            <img src="{{story.cover_upload.url}}" alt="Cover of {{story.published_in}}, {% if story.issue %}{{story.issue}}{% endif %}" class="mobile-cover">
                         </a>
                     </div>
                     {% endif %}
@@ -86,4 +36,42 @@
                     </div>
             </div>
         {% endfor %}
-    {% endif %}
+{% endif %}
+{% if unpubbed %}
+    <h2 class="header-card-dark">Pending Publication</h2>
+    {% for story in unpubbed %}
+    <div class="card card-dark pieces-row">
+        {% if story.cover_upload %}
+            <div>
+                <a target="__blank" href="{{story.piece_url}}">
+                    <img src="{{story.cover_upload.url}}" alt="Cover of {{story.published_in}}, {% if story.issue %}{{story.issue}}{% endif %}" class="piece-cover">
+                </a>
+            </div>
+        {% endif %}
+            <div class="pieces-list">
+            <p class="pieces-p">
+                <span class="piece-title">{{story.title}}. </span>
+                <a href="{{story.piece_url}}" target="_blank">{{story.published_in}}{% if story.issue %}, #{{story.issue}}{% endif %}</a>. Date pending. ({{story.word_count}} words.)
+            </p>
+            {% if story.cover_upload %}
+            <div class="mobile-cover">
+                <a target="__blank" href="{{story.piece_url}}">
+                    <img src="{{story.cover_upload.url}}" alt="Cover of {{story.published_in}}, {% if story.issue %}{{story.issue}}{% endif %}" class="mobile-cover">
+                </a>
+            </div>
+            {% endif %}
+                <div class="piece-quote">
+                    {{story.pull_quote}}
+                </div>
+                <div class="piece-tags">
+                    {{story.tags}}
+                </div>
+                {% for review in reviews %}
+                    {% if review.piece == story %}
+                        <div>Reviews for this piece: {{review.pull_quote}}</div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+    </div>
+    {% endfor %}
+{% endif %}
