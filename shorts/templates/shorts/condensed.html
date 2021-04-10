@@ -8,20 +8,21 @@
                     You are currently viewing a condensed list of all works. If you would like to see covers, pull quotes, and reviews, please click to go to the <a href="{% url 'shorts' %}">detailed list</a>.
                 </p>
             </div>
-        {% if unpubbed %}
-            <h3><span class="highlighter">Pending Publication</span></h3>
-                {% for story in unpubbed %}
-                <p class="pieces-p">
-                {{story.title}}. <a href="{{story.piece_url}}" target="_blank" class="pieces-p">{{story.published_in}}, #{{story.issue}}</a>. Date Pending. ({{story.word_count}} words.)
-                </p>
-                <br>
-            {% endfor %}
-        {% endif %}
+
         {% if pubbed %}
         <h3><span class="highlighter">Published Work</span></h3>
             {% for story in pubbed %}
             <p class="pieces-p">
             {{story.title}}. <a href="{{story.piece_url}}" target="_blank" class="pieces-p">{{story.published_in}}, #{{story.issue}}</a>. {{story.published_date}}. ({{story.word_count}} words.)
+            </p>
+            <br>
+        {% endfor %}
+        {% endif %}
+        {% if unpubbed %}
+        <h3><span class="highlighter">Pending Publication</span></h3>
+            {% for story in unpubbed %}
+            <p class="pieces-p">
+            {{story.title}}. <a href="{{story.piece_url}}" target="_blank" class="pieces-p">{{story.published_in}}, #{{story.issue}}</a>. Date Pending. ({{story.word_count}} words.)
             </p>
             <br>
         {% endfor %}
