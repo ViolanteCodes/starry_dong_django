@@ -1,7 +1,13 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Piece, Publisher, Review, Genre
+from .models import Piece, Publisher, Review, Genre, Category
+from django.views.generic import ListView
 # Create your views here.
+
+class CategoryList(ListView):
+    """View to list all pieces by category"""
+    model = Category
+    ordering = 'sort_order'
 
 def shorts(request):
     unpubbed = Piece.objects.filter(published_date__isnull=True).order_by('-pending_date')

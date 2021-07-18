@@ -27,7 +27,7 @@ urlpatterns = [
     path('ubw/', ubw, name ='ubw'),
     path('blog/', include('blog.urls')),
     path('testimonials/', include('testimonials.urls')),
-    path('shorts/', include('shorts.urls')),
+    path('publications/', include('shorts.urls')),
     path('contact/', include('contact.urls')),
 ]
 

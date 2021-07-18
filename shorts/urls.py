@@ -1,10 +1,8 @@
 from django.urls import path
 from . import views
+from shorts.views import CategoryList
 
 urlpatterns = [
-    path('', views.shorts, name='shorts'),
-    path('condensed/', views.condensed, name='condensed'),
-    path('genre/<slug:slug>/', views.by_genre, name='genre'),
-
+    path('', CategoryList.as_view(), name='publications')
 ]
 
