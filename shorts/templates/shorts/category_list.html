@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load custom_filters %}
 {% block body_block %}
     <h1>Publications</h1>
         <div class="central-card card-dark">
@@ -7,11 +8,13 @@
                 <p class="attribution">
                     All publications by Maria Dong, organized by type and publication date.
                      Links to audio recordings and reviews provided where available. You can
-                     also click to jump down to one of the following categories:
+                     also jump down to one of the following categories:
                         {% for category in object_list %}
                             <a href="#{{category.name}}">{{category.name}}</a>{% if not forloop.last %},{% else %}.{% endif %}
-                        {% endfor %}
-                </p>
+                        {% endfor %}<br><br>
+                        If you'd like to be notified
+                        when new works are published, you can sign up for the <a href="{% mailchimp_landing_link %}"
+                        target="blank">newsletter</a>.                </p>
             </div>
 
         {% for category in object_list %}
