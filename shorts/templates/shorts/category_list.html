@@ -6,12 +6,16 @@
             <div class="card">
                 <p class="attribution">
                     All publications by Maria Dong, organized by type and publication date.
-                     Links to audio recordings and reviews provided where available.
+                     Links to audio recordings and reviews provided where available. You can
+                     also click to jump down to one of the following categories:
+                        {% for category in object_list %}
+                            <a href="#{{category.name}}">{{category.name}}</a>{% if not forloop.last %},{% else %}.{% endif %}
+                        {% endfor %}
                 </p>
             </div>
 
         {% for category in object_list %}
-        <h3><span class="highlighter">{{category.name}}</span></h3>
+        <h3 id="{{category.name}}"><span class="highlighter">{{category.name}}</span></h3>
             {% for piece in category.pieces.all %}
             <p class="pieces-p">
                 {% if not piece.published_date %}
