@@ -42,7 +42,7 @@ class Piece(models.Model):
     """A representation of a piece of fiction."""
     author = 'Maria Dong'
     category = models.ForeignKey('Category', related_name='pieces', on_delete="models.CASCADE", null=True)
-    genre = models.ManyToManyField('Genre', related_name = 'pieces')
+    genre = models.ManyToManyField('Genre', related_name = 'pieces', blank=True)
     title = models.CharField(max_length=200)
     word_count = models.IntegerField()
     published_in = models.ForeignKey(Publisher, on_delete=models.CASCADE)
