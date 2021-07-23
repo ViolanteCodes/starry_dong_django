@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% load custom_filters %}
+{% block body_block %}
+    <h1>Press And Interviews</h1>
+        <div class="central-card card-dark">
+            <div class="card">
+                <p class="attribution">
+                    All interviews and press appearances by Maria Dong, organized by type and publication date.
+                     Links to audio or video recordings provided where available. You can
+                     also jump down to one of the following categories:
+                        {% for category in object_list %}
+                            <a href="#{{category.name}}">{{category.name}}</a>{% if not forloop.last %},{% else %}.{% endif %}
+                        {% endfor %}<br><br>
+                        If you'd like to be notified
+                        when new works are published, you can sign up for the <a href="{% mailchimp_landing_link %}"
+                        target="blank">newsletter</a>.                </p>
+            </div>
+
+        {% for category in object_list %}
+        <h3 id="{{category.name}}"><span class="highlighter">{{category.name}}</span></h3>
+            {% for press_item in category.press_items.all %}
+            <p class="pieces-p">
+                    <em>({{press_item.media_type.display_name}}.)</em>
+                    {{press_item.title}}. 
+                <a href="{{press_item.url}}" target="_blank" class="pieces-p">
+                    {{press_item.venue.name}}</a>.
+                {{press_item.published_date}}
+            </p>
+            <br>
+            {% endfor %}
+        {% endfor %}
+        
+
+        <h3 id="reviews-short-fiction"><span class="highlighter">Reviews, Short Fiction</span></h3>
+            <p class="pieces-p">
+                Links to short fiction reviews are listed immediately after the relevant story 
+                on the <a href="{% url 'publications' %}">publications page</a>.
+            </p>
+            <br>
+        </div>
+{% endblock %}

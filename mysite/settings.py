@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'testimonials.apps.TestimonialsConfig',
     'shorts.apps.ShortsConfig',
     'contact.apps.ContactConfig',
+    'press.apps.PressConfig',
 ]
 
 MIDDLEWARE = [

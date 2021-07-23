@@ -29,6 +29,7 @@ urlpatterns = [
     path('testimonials/', include('testimonials.urls')),
     path('publications/', include('shorts.urls')),
     path('contact/', include('contact.urls')),
+    path('press/', include('press.urls')),
 ]
 
 from . import views, settings
