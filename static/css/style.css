@@ -21,9 +21,9 @@
 .header-font {
     font-family: 'Coda Caption', sans-serif;
     font-size: 150px;
-    line-height: 150px;
     padding: 0px;
-    margin-bottom: 0.2em;
+    line-height: 0.5;
+    margin-bottom: 0.5em;
     background: -webkit-linear-gradient(#ccc88d, #d41dda);
     background-clip: text;
     -moz-background-clip: text;
@@ -79,33 +79,36 @@
     margin-block-start: 0em;
     margin-bottom: 0;
 }
-#menu-bar li {
+/* #menu-bar li {
     padding-left: 5px;
     padding-right: 5px;
     transition: 0.5s;
     border-radius: 10px;
-}
-#menu-bar li:hover {
+} */
+/* #menu-bar li:hover {
     background: #ccc88d;
     border-radius: 10px;
 }
 #menu-bar li:hover a{
     color:#000000
-}
+}*/
 #menu-bar a {
     font-size: 40px;
     font-family: 'Rajdhani', sans-serif;
     text-decoration: none;
     color:#ccc88d;
     text-transform: uppercase;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    transition: ease 0.5s;
 }
 #menu-bar a:hover {
     color: #000000;
-    transition: ease;
-    padding-left: 5px;
-    padding-right: 5px;
+    background-color: #ccc88d;
+    transition: ease 0.5s;
 }
 /* 1.0 B ----------------SLIDEOUT MENU--------------------------*/
 #slideout-menu {
@@ -621,12 +624,14 @@ footer li {
     .header-font {
         font-size: 130px;
         padding: 0px;
-        margin-bottom: 0px;
     }
-    nav ul {
+    #menu-bar ul {
         justify-content: center;
+        padding-left: 10%;
+        padding-right: 10%;
     }
-    nav ul li {
+
+    #menu-bar li{
         padding-left: 20px;
         padding-right: 20px;
     }
