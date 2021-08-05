@@ -9,20 +9,17 @@
 <div class="card central-card card-dark">
     <p>
         A prolific writer of short fiction, articles, essays, and poetry, Maria's work has been published in
-        {% for place in published_list %}
+        or is forthcoming from
+        {% for place in publisher_list %}
             {% if not forloop.last %}{{place}}, {% else %} 
             and {{place}}. {% endif %}
         {% endfor %}
-        {% if pending_list %}
-            She also has pieces pending in 
-        {% for place in pending_list %}
-            {% if not forloop.last %}{{place}}, {% else %}
-            and {{place}}. {% endif %}
-        {% endfor %}
-        {% endif %}
     </p>
     <p>
-    Maria was a 2018 pitchwars finalist and is represented by <a href="https://www.dystel.com/amy-bishop" target="blank">Amy Bishop</a> at Dystel, Goderich & Bourret. 
+        Maria, her partner, and a potato-dog live together in southwest Michigan, in a centenarian
+        saltbox house that is almost certainly haunted. She loves a good K-Drama and Bell's beer.</p>
+    <p>
+    She is represented by <a href="https://www.dystel.com/amy-bishop" target="blank">Amy Bishop</a> at Dystel, Goderich & Bourret. 
     She can also be reached via twitter <a href="https://twitter.com/mariadongwrites?lang=en" target="_blank">
     @mariadongwrites</a> or via email with the <a href="{% url 'contact' %}">contact form</a>. If you'd like to be
     notified when new fiction is published, you can also sign up for the <a href="{% mailchimp_landing_link %}"

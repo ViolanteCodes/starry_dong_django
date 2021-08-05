@@ -7,9 +7,8 @@ def landing(request):
 
 def about(request):
     """View to create the about me section"""
-    published_list = Publisher.objects.filter(piece__published_date__isnull=False).order_by('publisher_name').distinct()
-    pending_list = Publisher.objects.filter(piece__published_date__isnull=True).order_by('publisher_name').distinct()
-    return render(request, 'about.html', {'published_list':published_list, 'pending_list':pending_list})
+    publisher_list = Publisher.objects.order_by('publisher_name').distinct()
+    return render(request, 'about.html', {'publisher_list':publisher_list})
 
 def editorial(request):
     return render(request, 'editorial.html')
