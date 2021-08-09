@@ -1,6 +1,6 @@
 {% for post in posts %}
 <div class="card card-dark">
-    <h3><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h3>
+    <h3><a href="{% url 'post_detail' slug=post.slug %}">{{post.title}}</a></h3>
     <p>published: {{post.published_date}}</p>
         <p>{% autoescape off %}
             {{ post.body|truncatewords:30|safe }}
