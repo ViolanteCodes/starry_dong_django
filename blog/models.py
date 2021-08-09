@@ -17,8 +17,7 @@ class Post(models.Model):
     """A blog post"""
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
-    body = RichTextField(blank=True, null=True)
-    text = models.TextField()
+    text = RichTextField(blank=True, null=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     tags = models.ManyToManyField('Tag', related_name ='posts')

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'shorts.apps.ShortsConfig',
     'contact.apps.ContactConfig',
     'press.apps.PressConfig',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
