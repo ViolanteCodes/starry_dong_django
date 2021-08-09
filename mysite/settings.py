@@ -133,3 +133,16 @@ if DEBUG == True:
     STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static')
     ]
+
+#CKEditor
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_RESTRICT_BY_USER = True
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Advanced',
+        'width': 758,
+        'height': 300,
+    },
+}
