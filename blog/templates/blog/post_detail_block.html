@@ -3,7 +3,7 @@
     <h3><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h3>
     <p>published: {{post.published_date}}</p>
         <p>{% autoescape off %}
-            {{ post.text|truncatewords:30|linebreaksbr|safe }}
+            {{ post.body|truncatewords:30|safe }}
             {% endautoescape %}
         </p>
 </div>

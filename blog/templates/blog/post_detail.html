@@ -8,7 +8,7 @@
             </div>
         {% endif %}
         {% autoescape off %}
-        <p>{{ post.text|linebreaksbr|safe }}</p>
+        <p>{{ post.body|safe }}</p>
         {% endautoescape %}
         {% if tags %}
             <p class = 'piece-tags'>
