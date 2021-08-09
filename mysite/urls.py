@@ -30,7 +30,7 @@ urlpatterns = [
     path('publications/', include('shorts.urls')),
     path('contact/', include('contact.urls')),
     path('press/', include('press.urls')),
-    url(r'^ckeditor/', include(''ckeditor_uploader.urls')),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 from . import views, settings
