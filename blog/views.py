@@ -7,8 +7,9 @@ from .models import Post, Tag
 def post_list(request):
     posts = Post.objects.order_by('-created_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
-def post_detail(request, pk):
-    post = get_object_or_404(Post, pk=pk)
+
+def post_detail(request, slug):
+    post = get_object_or_404(Post, slug=slug)
     tags = Tag.objects.filter(posts=post)
     return render(request, 'blog/post_detail.html', {'post': post, 'tags':tags})
 
