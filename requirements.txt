@@ -1,4 +1,6 @@
 Django==2.2.16
+django-ckeditor==6.1.0
+django-js-asset==1.2.2
 django-ranged-response==0.2.0
 Pillow==8.2.0
 PyMySQL==0.10.1
