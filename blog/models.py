@@ -17,12 +17,12 @@ class Tag(models.Model):
 class Post(models.Model):
     """A blog post"""
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
     body = RichTextField(blank=True, null=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     slug = models.SlugField(null=True, blank=True)
     tags = models.ManyToManyField('Tag', related_name ='posts')
-    title = models.CharField(max_length=200)
 
     def publish(self):
         self.published_date = timezone.now()

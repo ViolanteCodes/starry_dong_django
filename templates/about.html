@@ -8,12 +8,17 @@
 </div>
 <div class="card central-card card-dark">
     <p>
-        A prolific writer of short fiction, articles, essays, and poetry, Maria's work is published
+        A prolific writer of short fiction, articles, essays, and poetry, 
+        Maria's work is published
         or forthcoming in
         {% for place in publisher_list %}
             {% if not forloop.last %}{{place}}, {% else %} 
             and {{place}}. {% endif %}
         {% endfor %}
+    </p>
+    <p>
+        Her debut novel, THE CONSTELLATIONS OF KATRINA KIM, comes out from
+        Grand Central Publishing in winter of 2023.
     </p>
     <p>
         Although she's currently a computer programmer, in her previous lives, 
