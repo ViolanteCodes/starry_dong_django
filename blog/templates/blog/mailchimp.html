@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block body_block %}
+    <h1>Blog</h1>
+    <div class="card card-dark">
+        <p>Note: The MariaDong.com blog is hosted off-site at mailchimp, which allows it
+            to be fully integrated with the 
+            <a href="https://mailchi.mp/9de76c09887e/maria-dong-writes-newsletter">newsletter</a>. 
+            If you'd like to get blog posts sent directly to your inbox, you can do that by 
+            <a href="https://mailchi.mp/9de76c09887e/maria-dong-writes-newsletter">
+            signing up for the newsletter</a>.
+        </p>
+    </div>
+    <div class="central-card card card-dark">
+        {% include 'blog/post_detail_block.html' %}
+    <script language="javascript" src="//MariaDong.us1.list-manage.com/generate-js/?u=427f18c5d7873d0f0a7b5a9f3&fid=63882&show=10" 
+    type="text/javascript">
+    </script>
+    </div>
+{% endblock %}
