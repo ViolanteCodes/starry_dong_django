@@ -4,6 +4,9 @@ from .models import Post, Tag
 
 # Create your views here.
 
+def mailchimp_post_list(request):
+    return render(request, 'blog/mailchimp.html')
+    
 def post_list(request):
     posts = Post.objects.order_by('-created_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
