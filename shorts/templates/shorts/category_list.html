@@ -9,36 +9,57 @@
                     All publications by Maria Dong, organized by type and publication date.
                      Links to audio recordings and reviews provided where available. You can
                      also jump down to one of the following categories:
-                        {% for category in object_list %}
-                            <a href="#{{category.name}}">{{category.name}}</a>{% if not forloop.last %},{% else %}.{% endif %}
+                        {% for category in pieces_list %}
+                            <a href="#{{category.category.name}}">{{category.category.name}}</a>{% if not forloop.last %},{% else %}.{% endif %}
                         {% endfor %}<br><br>
                         If you'd like to be notified
                         when new works are published, you can sign up for the <a href="{% mailchimp_landing_link %}"
                         target="blank">newsletter</a>.                </p>
             </div>
 
-        {% for category in object_list %}
-        <h3 id="{{category.name}}"><span class="highlighter">{{category.name}}</span></h3>
-            {% for piece in category.pieces.all %}
-            <p class="pieces-p">
-                {% if not piece.published_date %}
-                    <em>(Pending Publication.)</em>
-                {% endif %}{{piece.title}}. 
-            <a href="{{piece.piece_url}}" target="_blank" class="pieces-p">
-                {{piece.published_in}}{% if piece.issue %}, #{{piece.issue}}{% endif %}</a>.
-                {% if piece.published_date %}{{piece.published_date}}. {% endif %}
-                ({{piece.word_count}} words{% if piece.genre %}{% for genre in piece.genre.all %}, {{genre.name}}{% endfor %}.{% else %}.{% endif %})
-                {% if piece.audio_url %}
-                    <a href="{{piece.audio_url}}" target="__blank">Audio Available</a>.
-                {% endif %}
-                {% if piece.review_set.all %}
-                    Reviewed in:
-                    {% for review in piece.review_set.all %}
-                        <a href="{{review.review_url}}" target="__blank">{{review.review_venue}}</a>{% if not forloop.last %},{% else %}.{% endif %}{% endfor %}
-                {% endif %}
-            </p>
-            <br>
+        {% for category in pieces_list %}
+        <h3 id="{{category.category.name}}"><span class="highlighter">{{category.category.name}}</span></h3>
+            
+            {% for piece in category.unpubbed %}
+                <p class="pieces-p" style="margin-right:auto;">
+                    {% if piece.status == 'Pending' %}
+                        <em>(Pending Publication.)</em>
+                    {% endif %}{{piece.title}}. 
+                <a href="{{piece.piece_url}}" target="_blank" class="pieces-p">
+                    {{piece.published_in}}{% if piece.issue %}, #{{piece.issue}}{% endif %}</a>.
+                    {% if piece.published_date %}{{piece.published_date}}. {% endif %}
+                    ({{piece.word_count}} words{% if piece.genre %}{% for genre in piece.genre.all %}, {{genre.name}}{% endfor %}.{% else %}.{% endif %})
+                    {% if piece.audio_url %}
+                        <a href="{{piece.audio_url}}" target="__blank">Audio Available</a>.
+                    {% endif %}
+                    {% if piece.review_set.all %}
+                        Reviewed in:
+                        {% for review in piece.review_set.all %}
+                            <a href="{{review.review_url}}" target="__blank">{{review.review_venue}}</a>{% if not forloop.last %},{% else %}.{% endif %}{% endfor %}
+                    {% endif %}
+                </p>
+                <br>
             {% endfor %}
-        {% endfor %}
+            {% for piece in category.pubbed %}
+                <p class="pieces-p">
+                    {% if piece.status == 'pending' %}
+                        <em>(Pending Publication.)</em>
+                    {% endif %}{{piece.title}}. 
+                <a href="{{piece.piece_url}}" target="_blank" class="pieces-p">
+                    {{piece.published_in}}{% if piece.issue %}, #{{piece.issue}}{% endif %}</a>.
+                    {% if piece.published_date %}{{piece.published_date}}. {% endif %}
+                    ({{piece.word_count}} words{% if piece.genre %}{% for genre in piece.genre.all %}, {{genre.name}}{% endfor %}.{% else %}.{% endif %})
+                    {% if piece.audio_url %}
+                        <a href="{{piece.audio_url}}" target="__blank">Audio Available</a>.
+                    {% endif %}
+                    {% if piece.review_set.all %}
+                        Reviewed in:
+                        {% for review in piece.review_set.all %}
+                            <a href="{{review.review_url}}" target="__blank">{{review.review_venue}}</a>{% if not forloop.last %},{% else %}.{% endif %}{% endfor %}
+                    {% endif %}
+                </p>
+                <br>
+                {% endfor %}
+            {% endfor %}
         </div>
 {% endblock %}

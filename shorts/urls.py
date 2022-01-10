@@ -1,8 +1,8 @@
 from django.urls import path
 from . import views
-from shorts.views import CategoryList
+from shorts.views import sorted_category_pieces
 
 urlpatterns = [
-    path('', CategoryList.as_view(), name='publications')
+    path('', sorted_category_pieces, name='publications')
 ]
 
