@@ -12,7 +12,7 @@ class Category(models.Model):
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super().get_context_data(**kwargs)
-        # Add in a QuerySet of all Reivews
+        # Add in a QuerySet of all Reviews
         context['review_list'] = Review.objects.all()
         return context
 
@@ -40,6 +40,11 @@ class Publisher(models.Model):
 
 class Piece(models.Model):
     """A representation of a piece of fiction."""
+
+    STATUS_CHOICES = (
+        ('PUB', 'Published'),
+        ('PEN', 'Pending'),
+    )
     author = 'Maria Dong'
     category = models.ForeignKey('Category', related_name='pieces', on_delete="models.CASCADE", null=True)
     genre = models.ManyToManyField('Genre', related_name = 'pieces', blank=True)
@@ -52,15 +57,18 @@ class Piece(models.Model):
     pull_quote = models.TextField(blank=True)
     tags = models.CharField(max_length=200, blank=True)
     created_date = models.DateField(blank=True, null=True)
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default="PEN")
     pending_date = models.DateField(blank=True, null=True)
     published_date = models.DateField(blank=True, null=True)
     cover_upload = models.ImageField(blank=True, null=True)
 
-    class Meta:
-        ordering = ['-pending_date', '-published_date']
-
     def publish(self):
         self.save()
+
+    def save(self):
+        if self.status == "Published":
+            self.pending_date = ''
+        super(Piece, self).save()
 
     def __str__(self):
         return self.title
