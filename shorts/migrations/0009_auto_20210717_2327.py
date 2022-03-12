@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='piece',
             name='category',
-            field=models.ForeignKey(null=True, on_delete='models.CASCADE', related_name='pieces', to='shorts.Category'),
+            field=models.ForeignKey(null=True, on_delete=models.CASCADE, related_name='pieces', to='shorts.Category'),
         ),
         migrations.AlterField(
             model_name='piece',

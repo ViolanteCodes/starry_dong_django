@@ -17,7 +17,6 @@ def sorted_category_pieces(request):
                 'pubbed': pubbed,
             }
         )
-    print(pieces_list[0])
     return render(request, 'shorts/category_list.html', {'pieces_list': pieces_list})
 
 def shorts(request):
