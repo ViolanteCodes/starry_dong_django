@@ -146,3 +146,5 @@ CKEDITOR_CONFIGS = {
         'height': 300,
     },
 }
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

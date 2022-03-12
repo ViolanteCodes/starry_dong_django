@@ -42,8 +42,8 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=200)),
                 ('url', models.URLField(blank=True)),
                 ('published_date', models.DateField(blank=True, null=True)),
-                ('category', models.ForeignKey(null=True, on_delete='models.CASCADE', related_name='press_items', to='press.Category')),
-                ('media_type', models.ForeignKey(on_delete='models.CASCADE', related_name='press_items', to='press.MediaType')),
+                ('category', models.ForeignKey(null=True, on_delete=models.CASCADE, related_name='press_items', to='press.Category')),
+                ('media_type', models.ForeignKey(on_delete=models.CASCADE, related_name='press_items', to='press.MediaType')),
                 ('venue', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='press.Venue')),
             ],
             options={

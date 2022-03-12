@@ -31,8 +31,12 @@ class MediaType(models.Model):
 class PressItem(models.Model):
     """A representation of a press item."""
     author = 'Maria Dong'
-    category = models.ForeignKey('Category', related_name='press_items', on_delete="models.CASCADE", null=True)
-    media_type = models.ForeignKey('MediaType', related_name='press_items', on_delete="models.CASCADE")
+    category = models.ForeignKey(
+        'Category', related_name='press_items', on_delete = models.CASCADE, null=True
+    )
+    media_type = models.ForeignKey(
+        'MediaType', related_name='press_items', on_delete = models.CASCADE
+    )
     title = models.CharField(max_length=200)
     venue = models.ForeignKey('Venue', on_delete=models.CASCADE)
     url = models.URLField(blank=True)
